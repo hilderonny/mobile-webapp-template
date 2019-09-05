@@ -25,7 +25,7 @@ button:focus { outline: 0; }
     border: none;
 }
 
-.page > .header > .hamburger {
+.page > .header > .hamburger, .page > .header > .back {
     margin-right: 32px;
 }
 
@@ -39,8 +39,17 @@ button:focus { outline: 0; }
     position: relative;
 }
 
+/* https://support.google.com/adsense/answer/6002621?hl=de */
+.page > .bannerad {
+    background: rgba(255, 0, 0, 0.171);
+    height: 50px;
+    text-align: center;
+    align-self: center;
+}
+
 .page > .content {
     flex: 1;
+    overflow: auto;
 }
 
 /* https://www.material.io/components/buttons-floating-action-button/#specs */
@@ -204,4 +213,35 @@ button:focus { outline: 0; }
     border: none;
     text-transform: uppercase;
     font-size: 14px;
+}
+
+/* https://www.material.io/components/cards/#specs */
+.card {
+    padding: 0 24px 24px 16px;
+}
+
+.card > h1 {
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card > h2 {
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.card > h3 {
+    margin-top: 12px;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+}
+
+.card > p {
+    margin-top: 12px;
 }

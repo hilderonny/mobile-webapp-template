@@ -6,12 +6,16 @@
     color: #6200EE;
 }
 
-.moremenu, h1, .fab-outline {
-    color: #000000DE;
-}
-
 h2, p {
     color: #00000099;
+}
+
+h3 {
+    color: #0000008A;
+}
+
+.moremenu, h1, .card > h2, .fab-outline {
+    color: #000000DE;
 }
 
 .list > li {
@@ -32,6 +36,10 @@ h2, p {
 
 .page > .header > .hamburger {
     background-image: url(../icons/white/menu.png);
+}
+
+.page > .header > .back {
+    background-image: url(../icons/white/back.png);
 }
 
 .page > .header > .more {
