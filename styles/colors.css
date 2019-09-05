@@ -2,6 +2,10 @@
     background-color: #6200EE;
 }
 
+.chat {
+    background-color: #E6DDD4;
+}
+
 .dialog > .buttonbar > button {
     color: #6200EE;
 }
@@ -10,11 +14,11 @@ h2, p {
     color: #00000099;
 }
 
-h3 {
+h3, .footer > .info {
     color: #0000008A;
 }
 
-.moremenu, h1, .card > h2, .fab-outline {
+.moremenu, h1, .card > h2, .fab-outline, .chat > ul > li, .footer > .input > div {
     color: #000000DE;
 }
 
@@ -26,8 +30,20 @@ h3 {
     background-color:  #6200EE0A;
 }
 
-.dialog, .fab-outline {
+.dialog, .fab-outline, .chat > ul > li.left, .chat > .footer > .input > div {
     background-color: white;
+}
+
+.chat > ul > li.left:before {
+    border-bottom-color: white;
+}
+
+.chat > ul > li.right {
+    background-color: #D4F0B9;
+}
+
+.chat > ul > li.right:after {
+    border-bottom-color: #D4F0B9;
 }
 
 .page > .header > .title {
@@ -60,4 +76,8 @@ h3 {
 
 .fab.input {
     background-image: url(../icons/darkgrey/input.png);
+}
+
+.footer > .input > .send {
+    background-image: url(../icons/darkgrey/send.png);
 }
