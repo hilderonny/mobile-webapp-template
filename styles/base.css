@@ -272,6 +272,7 @@ button:focus, div:focus { outline: 0; }
 }
 
 .chat > ul > li.left {
+    align-self: flex-start;
     border-top-left-radius: 0;
 }
 
