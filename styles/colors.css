@@ -1,3 +1,11 @@
 .page > .header > .hamburger {
     background-image: url(../icons/white/menu.png);
 }
+
+.page > .header > .title {
+    color: white;
+}
+
+.page > .header > .more {
+    background-image: url(../icons/white/more_vert.png);
+}

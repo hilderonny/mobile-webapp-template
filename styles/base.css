@@ -36,6 +36,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; }
     font-size: 20px;
 }
 
+.page > .header > .more {
+    margin-left: 16px;
+    background-image: url(../icons/black/more_vert.png);
+}
+
 .page > .content {
     background:yellow;
     flex: 1;
