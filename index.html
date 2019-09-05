@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/colors.css">
 </head>
@@ -12,7 +13,12 @@
         <div class="header">
             <button class="hamburger"></button>
             <div class="title">My App</div>
-            <button class="more"></button>
+            <button class="more">
+                <ul class="moremenu">
+                    <li>Einstellungen</li>
+                    <li>Info</li>
+                </ul>
+            </button>
         </div>
 
         <div class="content">
@@ -20,43 +26,43 @@
             <ul class="list">
 
                 <li>
-                    <img class="avatar" />
+                    <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
+                    <div>
+                        <h1>Title</h1>
+                    </div>
+                    <img src="icons/darkgrey/info.png" class="info" />
+                </li>
+
+                <li>
+                    <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
                         <h1>Title</h1>
                         <h2>Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
                             Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle</h2>
                     </div>
-                    <img class="info" />
+                    <img src="icons/darkgrey/info.png" class="info" />
                 </li>
 
                 <li>
-                    <img class="avatar" />
-                    <div>
-                        <h1>Title</h1>
-                    </div>
-                    <img class="info" />
-                </li>
-
-                <li>
-                    <img class="avatar" />
+                    <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
                         <h1>Title</h1>
                         <h2 class="oneline">Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
                             Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
                             Subtitle</h2>
                     </div>
-                    <img class="info" />
+                    <img src="icons/darkgrey/info.png" class="info" />
                 </li>
 
                 <li>
-                    <img class="avatar" />
+                    <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
                         <h1>Title</h1>
                         <h2 class="twolines">Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
                             Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
                             Subtitle</h2>
                     </div>
-                    <img class="info" />
+                    <img src="icons/darkgrey/info.png" class="info" />
                 </li>
 
             </ul>
@@ -67,9 +73,9 @@
 
         </div>
 
-        <button class="fab fab-1"></button>
-        <button class="fab fab-2 fab-small"></button>
-        <button class="fab fab-3 fab-small"></button>
+        <button class="fab fab-1 chat"></button>
+        <button class="fab fab-2 fab-small fab-outline fab-extended add">Erstellen</button>
+        <button class="fab fab-3 fab-small fab-outline fab-extended input">Beitreten</button>
 
     </div>
 

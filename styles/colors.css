@@ -1,11 +1,51 @@
-.page > .header > .hamburger {
-    background-image: url(../icons/white/menu.png);
+.page > .header, .fab {
+    background-color: #6200EE;
+}
+
+.moremenu, h1, .fab-outline {
+    color: #000000DE;
+}
+
+h2 {
+    color: #00000099;
+}
+
+.list > li {
+    border-color:  #0000001E;
+}
+
+.moremenu > li:hover, .list > li:hover, .fab-outline:hover {
+    background-color:  #6200EE0A;
+}
+
+.fab-outline {
+    background-color: white;
 }
 
 .page > .header > .title {
     color: white;
 }
 
+.page > .header > .hamburger {
+    background-image: url(../icons/white/menu.png);
+}
+
 .page > .header > .more {
     background-image: url(../icons/white/more_vert.png);
+}
+
+.fab.chat {
+    background-image: url(../icons/white/chat.png);
+}
+
+.fab.close {
+    background-image: url(../icons/white/close.png);
+}
+
+.fab.add {
+    background-image: url(../icons/darkgrey/add.png);
+}
+
+.fab.input {
+    background-image: url(../icons/darkgrey/input.png);
 }
