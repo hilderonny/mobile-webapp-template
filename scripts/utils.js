@@ -1,9 +1,15 @@
 function showPage(pageId) {
-    var cl = document.getElementById(pageId).classList;
-    cl.remove('invisible');
+    document.getElementById(pageId).classList.remove('invisible');
 }
 
 function hidePage(pageId) {
-    var cl = document.getElementById(pageId).classList;
-    cl.add('invisible');
+    document.getElementById(pageId).classList.add('invisible');
+}
+
+function showProgressBar() {
+    document.querySelector('.progressbar').classList.remove('invisible');
+}
+
+function hideProgressBar() {
+    document.querySelector('.progressbar').classList.add('invisible');
 }
