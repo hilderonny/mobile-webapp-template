@@ -10,6 +10,14 @@
     color: #6200EE;
 }
 
+.progressbar {
+    background-color: #6200ee99;
+}
+
+.progressbar::after {
+    background-color: #6200eeff;
+}
+
 h2, p {
     color: #00000099;
 }
