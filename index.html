@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="PWA Template">
+    <meta name="apple-mobile-web-app-title" content="PWA Vorlage">
     <meta name="description" content="Vorlage für Progressive Web Apps">
     <meta name="theme-color" content="#8bb7f0" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -19,34 +19,62 @@
     <script defer src="scripts/utils.js"></script>
 
     <!-- Anwendungsspezifische Stile und Funktionen -->
-    <title>PWA Template</title>
+    <title>PWA Vorlage</title>
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="scripts/app.js"></script>
 </head>
 
 <body>
 
-    <div class="page" id="page1">
+    <!-- Listenseite -->
+
+    <div class="page listpage" id="page1">
 
         <div class="header">
             <button class="hamburger"></button>
-            <div class="title">My App</div>
-            <button class="more">
-                <ul class="moremenu">
-                    <li>Einstellungen</li>
-                    <li>Info</li>
+            <div class="title">PWA Vorlage</div>
+            <button class="more" onclick="UTILS.toggleClass('#moremenu', 'invisible');">
+                <ul class="moremenu invisible" id="moremenu">
+                    <li onclick="UTILS.showElement('#dialog');">Dialog öffnen</li>
+                    <li onclick="UTILS.toggleClass('#progressbar', 'invisible');">Fortschrittsbalken</li>
                 </ul>
             </button>
         </div>
+
+        <div class="progressbar invisible" id="progressbar"></div>
 
         <div class="content">
 
             <ul class="list">
 
+                <li onclick="UTILS.hideElement('#page3');UTILS.hideElement('#page4');UTILS.showElement('#page2');">
+                    <div>
+                        <h1>Detailseite mit Karte</h1>
+                    </div>
+                </li>
+
+                <li onclick="UTILS.hideElement('#page2');UTILS.hideElement('#page4');UTILS.showElement('#page3');">
+                    <div>
+                        <h1>Detailseite mit Chat</h1>
+                    </div>
+                </li>
+
+                <li onclick="UTILS.hideElement('#page2');UTILS.hideElement('#page3');UTILS.showElement('#page4');">
+                    <div>
+                        <h1>Detailseite mit Gitter</h1>
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <h1>Nur Überschrift</h1>
+                    </div>
+                </li>
+
                 <li>
                     <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
-                        <h1>Title</h1>
+                        <h1>Avatar, Überschrift und Info</h1>
                     </div>
                     <img src="icons/darkgrey/info.png" class="info" />
                 </li>
@@ -54,9 +82,9 @@
                 <li>
                     <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
-                        <h1>Title</h1>
-                        <h2>Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
-                            Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle</h2>
+                        <h1>Überschrift</h1>
+                        <h2>Mehrzeiliger Untertitel Mehrzeiliger Untertitel Mehrzeiliger Untertitel Mehrzeiliger
+                            Untertitel Mehrzeiliger Untertitel Mehrzeiliger Untertitel </h2>
                     </div>
                     <img src="icons/darkgrey/info.png" class="info" />
                 </li>
@@ -64,10 +92,9 @@
                 <li>
                     <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
-                        <h1>Title</h1>
-                        <h2 class="oneline">Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
-                            Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
-                            Subtitle</h2>
+                        <h1>Überschrift</h1>
+                        <h2 class="oneline">Einzeiliger Untertitel Einzeiliger Untertitel Einzeiliger Untertitel
+                            Einzeiliger Untertitel Einzeiliger Untertitel Einzeiliger Untertitel </h2>
                     </div>
                     <img src="icons/darkgrey/info.png" class="info" />
                 </li>
@@ -75,10 +102,10 @@
                 <li>
                     <img src="https://i.imgur.com/7e8Lwi4.jpg" class="avatar" />
                     <div>
-                        <h1>Title</h1>
-                        <h2 class="twolines">Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
-                            Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle
-                            Subtitle</h2>
+                        <h1>Überschrift</h1>
+                        <h2 class="twolines">Zweizeiliger Untertitel Zweizeiliger Untertitel Zweizeiliger Untertitel
+                            Zweizeiliger Untertitel Zweizeiliger Untertitel Zweizeiliger Untertitel Zweizeiliger
+                            Untertitel </h2>
                     </div>
                     <img src="icons/darkgrey/info.png" class="info" />
                 </li>
@@ -87,20 +114,106 @@
 
         </div>
 
-        <button class="fab fab-1 chat"></button>
-        <button class="fab fab-2 fab-small fab-outline fab-extended add">Erstellen</button>
-        <button class="fab fab-3 fab-small fab-outline fab-extended input">Beitreten</button>
+        <button class="fab fab-1 chat"
+            onclick="UTILS.toggleClass('.fab-1', 'chat');UTILS.toggleClass('.fab-1', 'close');UTILS.toggleClass('.fab-2', 'invisible');UTILS.toggleClass('.fab-3', 'invisible');"></button>
+        <button class="fab fab-2 fab-small fab-outline fab-extended add invisible">Erstellen</button>
+        <button class="fab fab-3 fab-small fab-outline fab-extended input invisible">Beitreten</button>
 
-        <div class="dialog">
-            <h1>Dialog header</h1>
+        <div class="dialog invisible" id="dialog">
+            <h1>Dialog Überschrift</h1>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
                 et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <p>vero eos et accusam et justo duo dolores et ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <div class="buttonbar">
-                <button>Action 1</button>
-                <button>Action 2</button>
+                <button onclick="UTILS.hideElement('#dialog');">Schließen</button>
             </div>
+        </div>
+
+    </div>
+
+    <!-- Detailseite mit Karte -->
+
+    <div class="page detailspage invisible" id="page2">
+
+        <div class="header">
+            <button class="back" onclick="UTILS.hideElement('#page2');"></button>
+        </div>
+
+        <div class="bannerad">Platz für Werbung</div>
+
+        <div class="content card">
+
+            <h1>Bezugspunkte &amp; Anpassung</h1>
+            <h3>Überzeugung</h3>
+            <h2>Bei Entscheidungen stützen wir uns zu stark auf nur eine Eigenschaft oder Information.</h2>
+            <p>In ungewohnten Situationen neigen wir dazu, Dinge basierend auf einem einzigen bekannten Bezugspunkt zu
+                bewerten, von dem aus wir relative Anpassungen vornehmen. Bei diesen Bezugspunkten handelt es sich
+                häufig um einen numerischen Wert, z. B. einen Originalpreis, oder um ein einzelnes Attribut, z. B.
+                Megapixel einer Digitalkamera.</p>
+            <p>Seltsamerweise kann auch der Vorschlag einer völlig irrelevanten Zahl die
+                nachfolgenden numerischen Vorhersagen beeinflussen. Welche Bezugspunkte provozieren Sie absichtlich oder
+                ungewollt bei den Menschen?</p>
+
+        </div>
+
+    </div>
+
+    <!-- Detailseite mit Chat -->
+
+    <div class="page detailspage invisible" id="page3">
+
+        <div class="header">
+            <button class="back" onclick="UTILS.hideElement('#page3');"></button>
+        </div>
+
+        <div class="content chat">
+
+            <ul>
+                <li class="left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="right">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="left">Lorem ipsum dolor sit amet</li>
+                <li class="right">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="right">Lorem ipsum dolor sit amet</li>
+                <li class="left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="right">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+                <li class="right">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</li>
+            </ul>
+
+            <div class="footer">
+
+                <div class="info">Verfügbare Zeichen: 99.999</div>
+                <div class="input">
+                    <div contenteditable="true">Ja was sage ich denn nur?</div>
+                    <button class="send"></button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Detailseite mit Gitter -->
+
+    <div class="page gridpage invisible" id="page4">
+
+        <div class="header">
+            <button class="back" onclick="UTILS.hideElement('#page4');"></button>
+        </div>
+
+        <div class="content">
+
+            <ul class="grid">
+
+                <li class="progressspinner"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
         </div>
 
     </div>

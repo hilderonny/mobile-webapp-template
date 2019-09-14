@@ -13,7 +13,8 @@ var UTILS = {
      * @param {*} selector Normalerweise eine ID in der Form "#ElementId". Kann aber auch ein CSS Selektor sein.
      */
     showElement: function(selector) {
-        document.querySelector(selector).classList.remove('invisible');
+        var element = document.querySelector(selector);
+        if (element) element.classList.remove('invisible');
     },
 
     /**
@@ -21,7 +22,17 @@ var UTILS = {
      * @param {*} selector Normalerweise eine ID in der Form "#ElementId". Kann aber auch ein CSS Selektor sein.
      */
     hideElement: function(selector) {
-        document.querySelector(selector).classList.add('invisible');
+        var element = document.querySelector(selector);
+        if (element) element.classList.add('invisible');
+    },
+
+    /**
+     * Schaltet eine CSS Klasse auf einem Element um
+     * @param {*} selector CSS Selektor für das Element
+     * @param {*} cls Klasse, die aktiviert oder deaktiviert werden muss
+     */
+    toggleClass: function(selector, cls) {
+        document.querySelector(selector).classList.toggle(cls);
     },
 
 };
