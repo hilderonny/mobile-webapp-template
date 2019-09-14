@@ -1,0 +1,423 @@
+/*
+Aus dieser Datei sollten alle Definitionsblöcke entfernt werden, die in der App nicht verwendet werden
+*/
+
+/***** Anwendung allgemein. Sollte stets enthalten sein. *****/
+* { margin:0; padding: 0; font-family: Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { position: relative; }
+button, .list > li { cursor: pointer; }
+button:focus, div:focus { outline: 0; }
+
+/***** Seiten allgemein *****/
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transition: left .2s;
+}
+
+.page.invisible {
+    left: 100%;
+}
+
+.page > .content {
+    flex: 1;
+    overflow: auto;
+}
+
+/***** App-Bar am oberen Rand einer Seite *****/
+.page > .header {
+    display: flex;
+    height: 56px;
+    padding: 0 16px;
+    align-items: center;
+    background-color: #8bb7f0;
+}
+
+.page > .header > button {
+    width: 24px;
+    height: 24px;
+    background: transparent center no-repeat;
+    border: none;
+}
+
+.page > .header > .hamburger, .page > .header > .back {
+    margin-right: 32px;
+}
+
+.page > .header > .back {
+    background-image: url(../icons/black/back.png);
+}
+
+.page > .header > .title {
+    flex: 1;
+    font-size: 20px;
+    color: black;
+}
+
+.page > .header > .more {
+    margin-left: 24px;
+    position: relative;
+}
+
+/***** Dreipunkte-Menü in App Bar *****/
+.moremenu {
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    text-align: left;
+    padding: 8px 0;
+    min-width: 112px;
+    border-radius: 4px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0px 3px 14px 2px rgba(0, 0, 0, 0.12); /* https://stackoverflow.com/a/39199702 */
+    color: #000000DE;
+    background-color: white;
+}
+
+.moremenu > li {
+    list-style-type: none;
+    line-height: 48px;
+    padding: 0 16px;
+}
+
+.moremenu > li:hover {
+    background-color:  #bee9ff;
+}
+
+/***** Werbebanner *****/
+.page > .bannerad {
+    height: 50px;
+    text-align: center;
+    align-self: center;
+}
+
+/***** Listenseite *****/
+.listpage .list > li {
+    list-style-type: none;
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid;
+    border-color:  #0000001E;
+}
+
+.listpage .list > li:hover {
+    background-color:  #bee9ff;
+}
+
+.listpage .list > li:last-child {
+    border-bottom: none;
+}
+
+.listpage .list > li > .avatar { /* Bild am Anfang der Zeile */
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 16px;
+    align-self: flex-start;
+}
+
+.listpage .list > li > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.listpage .list > li > div > h1 {
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000DE;
+}
+
+.listpage .list > li > div > h2 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #00000099;
+}
+
+.listpage .list > li > div > h2.oneline { /* Einzeilige Sekundärüberschrift */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.listpage .list > li > div > h2.twolines { /* Zweizeilige Sekundärüberschrift*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.listpage .list > li > .info { /* Button am Ende der Zeile */
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+}
+
+/***** Detailsseite mit Karten als Inhalt *****/
+.detailspage .content.card {
+    padding: 0 24px 24px 16px;
+    background-color: white;
+}
+
+.detailspage .content.card > h1 {
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    color: #000000DE;
+}
+
+.detailspage .content.card > h2 {
+    margin-top: 18px;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    color: #000000DE;
+}
+
+.detailspage .content.card > h3 {
+    margin-top: 12px;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+    color: #0000008A;
+}
+
+.detailspage .content.card > p {
+    margin-top: 12px;
+    color: #00000099;
+}
+
+/***** Detailseite mit Chat als Inhalt *****/
+.detailspage .content.chat {
+    display: flex;
+    flex-direction: column;
+    background-color: #E6DDD4;
+}
+
+.detailspage .content.chat > ul {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.detailspage .content.chat > ul > li {
+    position: relative;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin: 4px 16px;
+    max-width: 80%;
+    list-style: none;
+    box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    color: #000000DE;
+}
+
+.detailspage .content.chat > ul > li.left {
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    background-color: white;
+}
+
+.detailspage .content.chat > ul > li.left:before {
+    content: "";
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid;
+    transform: rotate(45deg);
+    left: -11px;
+    top: -1px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+    border-bottom-color: white;
+}
+
+.detailspage .content.chat > ul > li.right {
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    background-color: #D4F0B9;
+}
+
+.detailspage .content.chat > ul > li.right:after {
+    content: "";
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid;
+    transform: rotate(-45deg);
+    right: -11px;
+    top: -1px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+    border-bottom-color: #D4F0B9;
+}
+
+.detailspage .content.chat > .footer > .info {
+    font-size: 10px;
+    padding: 2px 4px 0 16px;
+    color: #0000008A;
+}
+
+.detailspage .content.chat > .footer > .input {
+    display: flex;
+    align-items: center;
+}
+
+.detailspage .content.chat > .footer > .input > div {
+    font-size: 16px;
+    border-radius: 28px;
+    flex: 1;
+    cursor: text;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    max-height: 90px;
+    overflow: auto;
+    box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    color: #000000DE;
+    background-color: white;
+}
+
+.detailspage .content.chat > .footer > .input > .send {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/***** Floating Action Buttons *****/
+.fab {
+    border: none;
+    border-radius: 28px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    min-width: 56px;
+    height: 56px;
+    background: transparent center no-repeat;
+    background-color: #8bb7f0;
+}
+
+.fab-2 {
+    bottom: 96px;
+}
+
+.fab-3 {
+    bottom: 168px;
+}
+
+.fab-outline {
+    color: #000000DE;
+    background-color: white;
+}
+
+.fab-outline:hover {
+    background-color:  #bee9ff;
+}
+
+.fab-small {
+    border-radius: 20px;
+    min-width: 40px;
+    height: 40px;
+    right: 24px;
+}
+
+.fab-small.fab-3 {
+    bottom: 152px;
+}
+
+.fab-small.fab-extended {
+    font-size: 14px;
+    padding: 0 20px 0 40px;
+    background-position-x: 10px;
+    text-transform: uppercase;
+}
+
+/**** Dialog allgemein *****/
+.dialog {
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 4px;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0px 9px 46px 8px rgba(0, 0, 0, 0.12),
+    0px 0px 0px 999px #232F3457;
+    background-color: white;
+}
+
+.dialog > h1 {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 20px 24px 0 24px;
+    color: #000000DE;
+}
+
+.dialog > p {
+    font-size: 16px;
+    padding: 20px 24px 0 24px;
+    color: #00000099;
+}
+
+.dialog > .buttonbar {
+    margin-top:28px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.dialog > .buttonbar > button {
+    min-width: 64px;
+    text-align: center;
+    height: 36px;
+    background: none;
+    padding: 0 8px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #8bb7f0;
+}
+
+.dialog > .buttonbar > button:hover {
+    background-color:  #bee9ff;
+}
+
+/* Anpassungen für Querformate. Listen und Details werden nebeneinander angezeigt. */
+@media (min-width: 600px), (orientation: landscape) {
+
+    body {
+        display: flex;
+    }
+
+    .page {
+        position: initial;
+    }
+
+    .listpage {
+        width: 300px;
+        border-right: 1px solid #0000001E;
+    }
+
+    .detailspage .header .back {
+        display: none;
+    }
+    
+}
