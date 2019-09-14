@@ -1,4 +1,4 @@
-.page > .header, .fab {
+.page > .header, .fab, .progressbar::after {
     background-color: #6200EE;
 }
 
@@ -14,8 +14,8 @@
     background-color: #6200ee99;
 }
 
-.progressbar::after {
-    background-color: #6200eeff;
+.progressspinner::after {
+    border-color: #6200EE transparent;
 }
 
 h2, p {
