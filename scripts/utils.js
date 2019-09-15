@@ -47,12 +47,3 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(serviceWorkerFile);
     });
 }
-
-// TODO: Reinbringen oder weglassen
-function showProgressBar() {
-    document.querySelector('.progressbar').classList.remove('invisible');
-}
-
-function hideProgressBar() {
-    document.querySelector('.progressbar').classList.add('invisible');
-}
