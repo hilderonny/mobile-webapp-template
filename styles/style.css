@@ -450,6 +450,15 @@ button:focus, div:focus { outline: 0; }
     color: #00000099;
 }
 
+.dialog > p > input {
+    font-size: 16px;
+    padding: 16px 12px;
+    width: 100%;
+    border: 2px solid;
+    border-radius: 4px;
+    outline: none;
+}
+
 .dialog > .buttonbar {
     margin-top:28px;
     padding: 8px;
