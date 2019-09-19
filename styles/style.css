@@ -457,6 +457,11 @@ button:focus, div:focus { outline: 0; }
     border: 2px solid;
     border-radius: 4px;
     outline: none;
+    border-color:  #0000001E;
+}
+
+.dialog > p > input:focus {
+    border-color:  #8bb7f0;
 }
 
 .dialog > .buttonbar {
