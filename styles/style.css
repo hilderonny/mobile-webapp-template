@@ -487,6 +487,53 @@ button:focus, div:focus { outline: 0; }
     background-color:  #bee9ff;
 }
 
+/***** Dialog mit Selection *****/
+.dialog .select {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 0 24px;
+}
+
+.dialog .select > label {
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid;
+    border-color:  #0000001E;
+    font-size: 16px;
+}
+
+.dialog .select > label:last-child {
+    border-bottom: none;
+}
+
+.dialog .select > label:hover {
+    background-color: #CC6EE60A;
+}
+
+.dialog .select > label > img {
+    width: 32px;
+    padding-left: 8px;
+}
+
+.dialog .select > label > input {
+    display: none;
+}
+
+.dialog .select > label > input:checked + img, .dialog .select > label > input:checked + img + span {
+    background-color: #CC6EE6;
+    color: white;
+}
+
+.dialog .select > label > span {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    background-size: 32px;
+    display: block;
+    line-height: 20px;
+    padding: 8px 16px;
+}
+
 /***** Ladebalken *****/
 .progressbar {
     height: 4px;
