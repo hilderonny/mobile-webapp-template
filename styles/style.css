@@ -665,6 +665,11 @@ button:focus, div:focus { outline: 0; }
 
     .page {
         position: relative;
+        flex: 1;
+    }
+
+    .page:first-of-type {
+        flex: unset;
     }
 
     .page.invisible {
