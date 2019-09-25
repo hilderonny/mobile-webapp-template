@@ -18,6 +18,7 @@ button:focus, div:focus { outline: 0; }
     left: 0;
     position: absolute;
     transition: left .2s;
+    background-color: white;
 }
 
 .page.invisible {
@@ -318,13 +319,13 @@ button:focus, div:focus { outline: 0; }
 }
 
 /***** Gitterseite *****/
-.gridpage .content .grid {
+.grid {
     padding: 8px;
     text-align: center;
     background-color: white;
 }
 
-.gridpage .content .grid > li {
+.grid > li {
     margin: 16px;
     display: inline-block;
     list-style-type: none;
@@ -334,6 +335,60 @@ button:focus, div:focus { outline: 0; }
     box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+/***** Gitterseite mit Kategorien *****/
+.categorygridpage .grid {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+}
+
+.categorygridpage .grid.twolines {
+    height: 320px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.categorygridpage *::-webkit-scrollbar {
+    display: none;
+}
+
+.categorygridpage .grid > li {
+    flex: none;
+    height: 120px;
+    width: 120px;
+}
+
+.categorygridpage .content {
+    padding: 8px 0;
+}
+
+.categorygridpage .category {
+    display: flex;
+    padding: 0 8px 0 16px;
+}
+
+.categorygridpage .category > h1 {
+    flex: 1;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.categorygridpage .category > button {
+    min-width: 64px;
+    text-align: center;
+    height: 36px;
+    background: none;
+    padding: 0 8px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #8bb7f0;
+}
+
+.categorygridpage .category > button:hover {
+    background-color:  #bee9ff;
 }
 
 /***** Floating Action Buttons *****/
